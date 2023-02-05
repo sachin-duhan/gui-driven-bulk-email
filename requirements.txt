@@ -1,0 +1,5 @@
+dynaconf
+smtplib
+csv
+email
+python-tk

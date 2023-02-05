@@ -10,7 +10,7 @@ venv/
 env/
 
 # Configuration files
-settings.toml
+.settings.toml
 
 # Log files
 *.log

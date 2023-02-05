@@ -1,0 +1,26 @@
+# .gitignore
+
+# Byte-compiled files
+__pycache__/
+*.pyc
+*.pyo
+
+# Python virtual environments
+venv/
+env/
+
+# Configuration files
+settings.toml
+
+# Log files
+*.log
+
+# Ignore built distributions
+dist/
+build/
+
+# Ignore Jupyter notebooks
+*.ipynb_checkpoints/
+
+.venv/*
+.venv

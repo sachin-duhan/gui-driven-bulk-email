@@ -1,12 +1,20 @@
-import tkinter as tk
-from tkinter import filedialog
+#! /usr/bin/python3 
+
+__author__ = "Sachin duhan"
+
 import csv
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.mime.image import MIMEImage
+from config import settings
 
-def generate_certificates(file_path):
+def generate_certificates(file_path: str, subject: str, user_email: str = None, password: str = None):
+    if user_email is None:
+        user_email = settings.SMTP_USERNAME
+    if password is None:
+        password = settings.SMTP_PASSWORD
+
     # Read the CSV file
     with open(file_path, "r") as file:
         reader = csv.reader(file)
@@ -24,8 +32,8 @@ def generate_certificates(file_path):
 
             # Send an email with the certificate
             msg = MIMEMultipart()
-            msg['Subject'] = 'Webinar Certificate'
-            msg['From'] = '[Your Email Address]'
+            msg['Subject'] = subject
+            msg['From'] = user_email
             msg['To'] = email
 
             with open("certificate.txt", "r") as f:
@@ -36,8 +44,9 @@ def generate_certificates(file_path):
             s.ehlo()
             s.starttls()
             s.ehlo()
-            s.login('[Your Email Address]', '[Your Email Password]')
-            s.sendmail('[Your Email Address]', email, msg.as_string())
+            s.login(user_email, password)
+            s.sendmail(user_email, email, msg.as_string())
             s.quit()
 
 
+print(settings.SMTP_SERVER)

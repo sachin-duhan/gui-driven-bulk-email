@@ -30,6 +30,18 @@ class CertificateGeneratorGUI(tk.Tk):
         password_label.pack()
         self.password_entry = ttk.Entry(self, show="*")
         self.password_entry.pack()
+
+        # Webinar Subject Name
+        webinar_label = ttk.Label(self, text="Webinar Name")
+        webinar_label.pack()
+        self.webinar_entry = ttk.Entry(self)
+        self.webinar_entry.pack()
+        
+        # Email password input
+        date_label = ttk.Label(self, text="Date")
+        date_label.pack()
+        self.date_entry = ttk.Entry(self)
+        self.date_entry.pack()
         
         # CSV file selection button
         select_csv_button = ttk.Button(self, text="Select CSV File", command=self.select_csv)
@@ -41,11 +53,15 @@ class CertificateGeneratorGUI(tk.Tk):
         subject = self.subject_entry.get()
         email = self.email_entry.get()
         password = self.password_entry.get()
+        webinar = self.webinar_entry.get()
+        date = self.date_entry.get()
         generate_certificates(
             file_path=file_path,
             subject=subject, 
             user_email=email, 
-            password=password
+            password=password,
+            webinar=webinar,
+            date=date
         )
 
 

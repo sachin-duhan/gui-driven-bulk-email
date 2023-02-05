@@ -3,3 +3,4 @@ smtplib
 csv
 email
 python-tk
+pillow

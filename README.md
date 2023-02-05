@@ -21,7 +21,7 @@ Requirements
 
 ## Installation
 
-- Clone the repository: git clone [here](https://github.com/sachin-duhan26/gui-drive-bulk-email.git)
+- Clone the repository: git clone [here](https://github.com/sachin-duhan26/gui-driven-bulk-email.git)
 ```bash
 pip install --upgrade pip
 pip --version

@@ -8,7 +8,7 @@ class CertificateGeneratorGUI(tk.Tk):
         tk.Tk.__init__(self, *args, **kwargs)
         
         self.title("Certificate Generator GUI")
-        self.geometry("400x300")
+        self.geometry("400x500")
         
         label = ttk.Label(self, text="Welcome to the Certificate Generator GUI!", font=("TkDefaultFont", 14))
         label.pack(pady=20)

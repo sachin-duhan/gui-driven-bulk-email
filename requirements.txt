@@ -1,6 +1,3 @@
 dynaconf
-smtplib
-csv
-email
-python-tk
 pillow
+docx
